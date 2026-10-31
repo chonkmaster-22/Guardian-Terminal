@@ -1,0 +1,37 @@
+name: Bug report
+description: Something in Guardian Terminal doesn't work as it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting it. If the game itself has the problem without any mods (Play unmodded), please report it
+        to [Savage Wind](https://github.com/Revivedx/SavageWindRecomp/issues) instead.
+        Never attach game files or mod files you didn't make.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: mods
+    attributes:
+      label: Your mods
+      description: The mods that were on, in their order (and where you got them).
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Guardian Terminal (About page), Savage Wind, game files (both on Settings).
+      placeholder: Guardian Terminal 0.4.0, Savage Wind 0.3.1-alpha.3, game files 1.9.0, DLC 3.0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Merge report and logs
+      description: |
+        Drag in logs\last-build.txt (Tools ▸ Merge report), logs\crash.txt if there is one,
+        and savagewind.log (Settings ▸ Savage Wind ▸ Its log) if the game was involved.

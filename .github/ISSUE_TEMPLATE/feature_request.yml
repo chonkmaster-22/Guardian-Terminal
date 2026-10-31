@@ -1,0 +1,11 @@
+name: Idea
+description: Something Guardian Terminal could do
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What you'd like it to do, and what it would help with (a mod that needs it, ...).
+    validations:
+      required: true

@@ -1,0 +1,42 @@
+# Builds Guardian Terminal on every push and pull request, and makes the GitHub release when a version tag
+# (v0.4.0, ...) is pushed: the zip from package.ps1 and its checksum, attached to the release.
+name: Build and release
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and package
+        shell: powershell
+        run: |
+          $version = $null
+          if ($env:GITHUB_REF_TYPE -eq 'tag') { $version = $env:GITHUB_REF_NAME.TrimStart('v') }
+          if ($version) { .\package.ps1 -Version $version } else { .\package.ps1 }
+
+      - name: Keep the build
+        uses: actions/upload-artifact@v4
+        with:
+          name: GuardianTerminal
+          path: dist/*
+
+      - name: Make the release
+        if: github.ref_type == 'tag'
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          $files = Get-ChildItem dist -File | ForEach-Object FullName
+          gh release create $tag @files --title "Guardian Terminal $tag" --notes-file docs/release-notes.md
