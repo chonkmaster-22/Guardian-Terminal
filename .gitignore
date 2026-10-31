@@ -4,15 +4,15 @@ obj/
 dist/
 
 # what Guardian Terminal makes when it's run from this folder (never commit mods, saves or game files)
-mods/
-overlay/
-staging/
-downloads/
-logs/
-save-backups/
-thumbnails/
-config.json
-config.json.tmp
+/mods/
+/overlay/
+/staging/
+/downloads/
+/logs/
+/save-backups/
+/thumbnails/
+/config.json
+/config.json.tmp
 *.gtprofile
 
 # editors and Windows
