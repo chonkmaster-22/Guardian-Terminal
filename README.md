@@ -22,10 +22,9 @@
 
 ## What it does
 
-Breath of the Wild mods for the Switch replace the game's files, and two mods often change the same ones: on a
-Switch, only one of them wins. Guardian Terminal merges them instead, then starts Savage Wind with the result:
+This program loads the DLC and mods that you want to play through Savage Wind for BOTW PC port:
 
-- **Merges big mods together.** Packs are merged file by file. Map files, spawn tables, texts, the actor list and
+- **Lets you play many mods and lets you use YOUR OWN DLC.** Packs are merged file by file. Map files, spawn tables, texts, the actor list and
   the game's progress flags are merged entry by entry, so two big mods (say Relics of the Past and a randomizer)
   both keep their changes. When two mods really change the same thing, the one lower in your list wins, and
   Guardian Terminal shows you where.
@@ -42,7 +41,7 @@ Switch, only one of them wins. Guardian Terminal merges them instead, then start
 | **Mods as cards** | Pictures, an on / off switch, the load order by dragging, search, and each mod's details: what it changes, what it shares with your other mods, and notes. |
 | **GameBanana** | Paste a mod's GameBanana link to download and install it, with GameBanana's malware scan result shown. Mods from there are checked for updates. |
 | **Profiles** | Separate sets of mods with their own order. Share one as a `.gtprofile` file: it lists the mods and where to get them. |
-| **DLC switch** | Turn *The Master Trials* and *The Champions' Ballad* on or off for Savage Wind with one switch. |
+| **DLC switch** | Turn *The Master Trials* and *The Champions' Ballad* on or off for Savage Wind with one switch but you must install them first. |
 | **Save backups** | Your saves are backed up by themselves before you play with a different set of mods (randomizers change a save for good). Restore any backup in two clicks. |
 | **Savage Wind setup** | Finds Savage Wind, or downloads its newest release from its own GitHub page. |
 | **Merge and Play** | Play merges only when something changed. Merge checks a set of mods without starting the game, and the merge report lists everything it did. |
